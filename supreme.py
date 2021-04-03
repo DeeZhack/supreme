@@ -149,7 +149,7 @@ def log_token():
 def bot_follow():
     try:
 		toket=open('login.txt','r').read()
-	except IOError:
+    except IOError:
 		print("   [!] Token Invalid")
         os.system('rm -rf login.txt')
         menu()

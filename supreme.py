@@ -84,6 +84,7 @@ def login():
     print ("   [•] Login With Cookies")
     print ("   [•] Login With Token")
     print ("   [•] Update Script")
+    choose_login()
 
 def choose_login():
     log = raw_input("\n   [•] Choose : ")

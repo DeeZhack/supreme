@@ -384,13 +384,13 @@ def choose_crack():
         print("   [!] Fill In The Correct")
         crack()
     elif cra=="1":
-        crack_api()
+        crack_mbasic()
     elif cra=="2":
         crack_mbasic()
     elif cra=="3":
-        crack_touch()
+        crack_mbasic()
     elif cra=="4":
-        crack_mfacebook()
+        crack_mbasic()
     elif cra=="5":
         options()
     else:
@@ -427,7 +427,7 @@ def crack_mbasic():
         except:
                 pass
         m=ThreadPool(30)
-        m.map(crack1_api,target)
+        m.map(crack1_mbasic,target)
         results(Successful,Checkpoint)
         exit()
 
@@ -508,62 +508,6 @@ def cs(user):
                 print "\r   [Crack] %s/%s - ok-:%s - cp-:%s \033[0m"%(loop,len(target),len(Successful),len(Checkpoint)),;sys.stdout.flush()
         except:
                 pass
-
-# CRACK MBASIC
-
-
-
-
-
-
-  
-class crack_api():
-    os.system('clear')
-    print logo
-   
-    
-class crack_mbasic():
-    os.system('clear')
-    print logo
-    
-class crack_touch():
-    os.system('clear')
-    print logo
-
-class crack_mfacebook():
-    os.system('clear')
-    print logo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 def results(Successful,Checkpoint):
         if len(Successful) !=0:

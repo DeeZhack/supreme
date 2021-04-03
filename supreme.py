@@ -3,9 +3,14 @@
 # code by Dapunta Khurayra X
 # Facebook : Facebook.com/Dapunta.Khurayra.X
 
+import requests,bs4,sys,os,subprocess
+import requests,sys,random,time,re,base64,json
+reload(sys)
+sys.setdefaultencoding("utf-8")
 import os,sys,uuid,time,datetime,mechanize,itertools,datetime,random,hashlib,re,threading,json,getpass,urllib,cookielib,bs4
 from multiprocessing.pool import ThreadPool
 from datetime import date
+
 def clear():
     if ' linux' in sys.platform.lower():
         os.system('clear')

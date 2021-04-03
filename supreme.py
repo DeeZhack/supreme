@@ -61,10 +61,10 @@ def jalan(z):
                 sys.stdout.flush()
                 time.sleep(0.03)
 
-logo = ("""               ______  _____  ___  ______  _______
-              / __/ / / / _ \/ _ \/ __/  |/  / __/
-             _\ \/ /_/ / ___/ , _/ _// /|_/ / _/
-            /___/\____/_/  /_/|_/___/_/  /_/___/
+logo = ("""              ______  _____  ___  ______  _______
+             / __/ / / / _ \/ _ \/ __/  |/  / __/
+            _\ \/ /_/ / ___/ , _/ _// /|_/ / _/
+           /___/\____/_/  /_/|_/___/_/  /_/___/
             
                Coded By : Dapunta Khurayra X
 ─────────────────────────────────────────────────────────────""")
@@ -428,6 +428,7 @@ def crack_mbasic():
         	exit("\n   [!] Wrong File Name")
         print("   [•] Result OK Saved To : ok.txt")
         print("   [•] Result CP Saved To : cp.txt")
+	print("─────────────────────────────────────────────────────────────")
         try:
                 os.mkdir("crack")
         except:
@@ -480,6 +481,7 @@ def manual():
                 exit("   [!] Dont Empty")
         print("   [•] Result OK Saved To : ok.txt")
         print("   [•] Result CP Saved To : cp.txt")
+	print("─────────────────────────────────────────────────────────────")
         try:
                 os.mkdir("crack")
         except:

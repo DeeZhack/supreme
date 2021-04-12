@@ -271,7 +271,9 @@ def dump_public():
 		os.system('rm -rf login.txt')
 		login()
         ah = raw_input("   [•] ID Public Target : ")
-        ih = raw_input("   [•] File Name        : ")
+	jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
+	op = json.loads(jok.text)
+        ih = op['first_name']
         if ah in [""]:
         	exit("   [!] Don't Empty")
         try:

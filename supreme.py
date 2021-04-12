@@ -273,7 +273,7 @@ def dump_public():
         ah = raw_input("   [•] ID Public Target : ")
 	jok = requests.get("https://graph.facebook.com/"+ah+"?access_token="+toket)
 	op = json.loads(jok.text)
-        ih = op['first_name']
+        ih = op['first_name'].replace(" ","_")
         if ah in [""]:
         	exit("   [!] Don't Empty")
         try:

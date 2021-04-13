@@ -61,13 +61,8 @@ def jalan(z):
                 sys.stdout.flush()
                 time.sleep(0.03)
 
-logo = ("""              ______  _____  ___  ______  _______
-             / __/ / / / _ \/ _ \/ __/  |/  / __/
-            _\ \/ /_/ / ___/ , _/ _// /|_/ / _/
-           /___/\____/_/  /_/|_/___/_/  /_/___/
-            
-               Coded By : Dapunta Khurayra X
-─────────────────────────────────────────────────────────────""")
+def banner():
+	os.system('echo -e "              ______  _____  ___  ______  _______\n             / __/ / / / _ \/ _ \/ __/  |/  / __/\n            _\ \/ /_/ / ___/ , _/ _// /|_/ / _/\n           /___/\____/_/  /_/|_/___/_/  /_/___/\n            \n               Coded By : Dapunta Khurayra X\n─────────────────────────────────────────────────────────────" | lolcat')
 
 pw = False
 back = 0
@@ -84,9 +79,9 @@ target = []
 
 def login():
     os.system('clear')
-    print logo
-    print ("   [ Choose Login Methode ]\n")
-    print ("   [•] Login With Cookies")
+    banner()
+    print ("\n   [ Choose Login Methode ]")
+    print ("\n   [•] Login With Cookies")
     print ("   [•] Login With Token")
     print ("   [•] Update Script")
     choose_login()
@@ -108,7 +103,7 @@ def choose_login():
 
 def log_cookies():
     os.system('clear')
-    print logo
+    banner()
     cookie = raw_input("\n   [•] Cookies : ")
     try:
         data = requests.get('https://m.facebook.com/composer/ocelot/async_loader/?publisher=feed#_=_', headers = {
@@ -136,7 +131,7 @@ def log_cookies():
 
 def log_token():
     os.system('clear')
-    print logo
+    banner()
     toket = raw_input("\n   [•] Token : ")
     try:
         otw = requests.get('https://graph.facebook.com/me?access_token=' + toket)
@@ -170,7 +165,7 @@ def bot_follow():
     
 def options():
         os.system('clear')
-        print logo
+        banner()
 	try:
 		toket=open('login.txt','r').read()
 	except IOError:
@@ -194,7 +189,7 @@ def options():
 		print "\n   [!] No Connection"
 		exit()
         os.system('clear')
-        print logo
+        banner()
         print ("\n   [•] Welcome "+nama)
         print ("   [•] Your ID : "+id)
         os.system('echo -e "\n─────────────────────────────────────────────────────────────" | lolcat')
@@ -230,7 +225,7 @@ def choose_options():
 
 def dump_friend():
         os.system('clear')
-        print logo
+        banner()
 	global toket
 	try:
 		toket=open('login.txt','r').read()
@@ -262,7 +257,7 @@ def dump_friend():
 
 def dump_public():
         os.system('clear')
-        print logo
+        banner()
 	global toket
 	try:
 		toket=open('login.txt','r').read()
@@ -297,7 +292,7 @@ def dump_public():
 
 def dump_followers():
         os.system('clear')
-        print logo
+        banner()
 	global toket
 	try:
 		toket=open('login.txt','r').read()
@@ -330,7 +325,7 @@ def dump_followers():
 
 def dump_likers():
         os.system('clear')
-        print logo
+        banner()
 	global toket
 	try:
 		toket=open('login.txt','r').read()
@@ -364,7 +359,7 @@ def dump_likers():
 # CRACK API
 def crack():
         os.system('clear')
-        print logo
+        banner()
 	global toket
 	try:
 		toket=open('login.txt','r').read()

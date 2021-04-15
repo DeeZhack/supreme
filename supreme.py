@@ -419,7 +419,7 @@ def crack1_mbasic(user):
 				  print "\r\x1b[0;37m   [Crack] %s/%s - ok-:%s - cp-:%s "%(loop,len(target),len(Successful),len(Checkpoint)),;sys.stdout.flush()
 				except:continue
 		loop += 1
-				print "\r\x1b[0;37m   [Crack] %s/%s - ok-:%s - cp-:%s "%(loop,len(target),len(Successful),len(Checkpoint)),;sys.stdout.flush()
+			print "\r\x1b[0;37m   [Crack] %s/%s - ok-:%s - cp-:%s "%(loop,len(target),len(Successful),len(Checkpoint)),;sys.stdout.flush()
 	except:
 	  pass
 
@@ -470,7 +470,7 @@ def cs(user):
 				  print "\r\x1b[0;37m   [Crack] %s/%s - ok-:%s - cp-:%s "%(loop,len(target),len(Successful),len(Checkpoint)),;sys.stdout.flush()
 				except:continue
 		loop += 1
-				print "\r\x1b[0;37m   [Crack] %s/%s - ok-:%s - cp-:%s "%(loop,len(target),len(Successful),len(Checkpoint)),;sys.stdout.flush()
+			print "\r\x1b[0;37m   [Crack] %s/%s - ok-:%s - cp-:%s "%(loop,len(target),len(Successful),len(Checkpoint)),;sys.stdout.flush()
 	except:
 	  pass
 def results(Successful,Checkpoint):

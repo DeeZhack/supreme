@@ -469,9 +469,9 @@ def cs(user):
 
 def results(Successful,Checkpoint):
         if len(Successful) !=0:
-                print ("   [OK] : "+str(len(Successful)))
+                print ("\n   [OK] : "+str(len(Successful)))
         if len(Checkpoint) !=0:
-                print ("   [CP] : "+str(len(Checkpoint)))
+                print ("\n   [CP] : "+str(len(Checkpoint)))
         if len(Successful) ==0 and len(Checkpoint) ==0:
                 print "\n"
                 print ("   [!] No Result Found")
